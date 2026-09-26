@@ -1,0 +1,9 @@
+{
+  "name": "nm_scriptc",
+  "description": "scriptc Native Messaging host",
+  "path": "/ABSOLUTE/PATH/TO/native-messaging-scriptc/nm_scriptc_node_fs",
+  "type": "stdio",
+  "allowed_origins": [
+    ""
+  ]
+}
