@@ -26,11 +26,51 @@ bun install --trust scriptc @scriptc/runtime-wasm32-wasi@0.2.5
 SCRIPTC_NO_CACHE=1 bun x scriptc build ./nm_js2wasm_node_fs.ts --optimization=release --strip -o nm_scriptc_node_fs
 ```
 
+Use `zig cc` and `nm_scriptc.ts`
+```shell
+SCRIPTC_CC="zigcc" SCRIPTC_NO_CACHE=1 bun x scriptc build ./nm_scriptc.ts --optimization=release --strip -o nm_scriptc
+```
+
 ### Compile to WASM WASI P1 target
 
 ```shell
 SCRIPTC_NO_CACHE=1 SCRIPTC_TARGET=wasm32-wasi bun x scriptc build ./nm_js2wasm_node_fs.ts --optimization=release -o nm_scriptc_node_fs.wasm
 ```
+
+```shell
+SCRIPTC_CC="zigcc" SCRIPTC_NO_CACHE=1 SCRIPTC_TARGET=wasm32-wasi bun x scriptc build ./nm_scriptc.ts --optimization=release --strip -o nm_scriptc.wasm
+```
+### Coverage
+
+```shell
+bun x scriptc coverage nm_scriptc.ts
+scriptc coverage /home/user/native-messaging-scriptc/nm_scriptc.ts
+
+  statements analyzed   93
+  compile statically    93  (100%)
+
+  fully static — this program has no dynamic remainder.
+```
+
+```shell
+bun x scriptc coverage nm_js2wasm_node_fs.ts
+scriptc coverage /home/user/native-messaging-scriptc/nm_js2wasm_node_fs.ts
+
+  statements analyzed   210
+  compile statically    210  (100%)
+
+  fully static — this program has no dynamic remainder.
+```
+```shell
+bun x scriptc coverage nm_js2wasm_sync_framing.ts
+scriptc coverage /home/user/native-messaging-scriptc/nm_js2wasm_sync_framing.ts
+
+  statements analyzed   157
+  compile statically    157  (100%)
+
+  fully static — this program has no dynamic remainder.
+```
+
 
 ### Installation and usage on Chrome and Chromium
 
