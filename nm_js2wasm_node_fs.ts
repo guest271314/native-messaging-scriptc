@@ -170,5 +170,3 @@ export function main(): void {
 // Invoke the entry point. js2wasm compiles a top-level call into the module's
 // `_start`, and under real `node` this runs the host loop directly.
 main();
-
-
