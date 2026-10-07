@@ -1,5 +1,5 @@
 //! https://github.com/loopdive/js2/blob/main/examples/native-messaging/nm_js2wasm_sync_framing.ts
-//
+
 // Shared, host-INDEPENDENT Native Messaging synchronous framing/streaming core
 // (#2778). Both `nm_js2wasm_deno.ts` (Deno `readSync`/`writeSync`) and `nm_js2wasm_node_fs.ts`
 // (`node:fs` `readSync`/`writeSync`) are now THIN adapters that inject their
@@ -96,7 +96,7 @@ function readFillExact(read: NmRead, buf: Uint8Array, start: number, n: number):
 // Emit one array frame: 4-byte LE length prefix + `[` + src[start..start+runLen)
 // + `]`, built whole with an element loop and written in ONE `write` (one
 // fd_write). #2526: prefix + body share one buffer so a streaming receiver never
-// misaligns on a pipe-chunk boundary (loopdive/js2wasm#389). No subarray / no
+// misaligns on a pipe-chunk boundary (loopdive/js2#389). No subarray / no
 // `array.copy` — under wasmtime that is ~14x slower than an element loop on i8 GC
 // arrays.
 function emitRun(write: NmWrite, src: Uint8Array, start: number, runLen: number): void {
@@ -340,3 +340,4 @@ export function runNmHost(read: NmRead, write: NmWrite, log: NmLog, maxFrameSize
     runVerbatim(read, write);
   }
 }
+
