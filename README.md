@@ -23,13 +23,13 @@ bun install --trust scriptc @scriptc/runtime-wasm32-wasi@0.2.5
 ### Compile to native executable
 
 ```shell
-SCRIPTC_NO_CACHE=1 bun x scriptc build ./nm_scriptc_node_fs.ts --optimization=release --strip -o nm_scriptc_node_fs
+SCRIPTC_NO_CACHE=1 bun x scriptc build ./nm_js2wasm_node_fs.ts --optimization=release --strip -o nm_scriptc_node_fs
 ```
 
 ### Compile to WASM WASI P1 target
 
 ```shell
-SCRIPTC_NO_CACHE=1 SCRIPTC_TARGET=wasm32-wasi bun x scriptc build ./nm_scriptc_node_fs.ts --optimization=release -o nm_scriptc_node_fs.wasm
+SCRIPTC_NO_CACHE=1 SCRIPTC_TARGET=wasm32-wasi bun x scriptc build ./nm_js2wasm_node_fs.ts --optimization=release -o nm_scriptc_node_fs.wasm
 ```
 
 ### Installation and usage on Chrome and Chromium
