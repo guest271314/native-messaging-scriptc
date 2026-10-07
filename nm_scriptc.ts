@@ -1,12 +1,11 @@
 //! TypeScript Native Messaging host
-//! guest271314, 7-28-2024
+//! guest271314, 7-28-2024, 10-6-2026
 //!
+//! scriptc targets ES2023 in tsconfig/base.json
+//! #!/usr/bin/env -S /home/user/bin/bun x scriptc run
 //! #!/usr/bin/env -S /home/user/bin/bun -b --expose-gc
 //! #!/usr/bin/env -S /home/user/bin/deno -A --v8-flags="--expose-gc"
 //! #!/usr/bin/env -S /home/user/bin/node --expose-gc
-//! #!/usr/bin/env -S /home/user/bin/bun x scriptc run
-//!
-//! scriptc targets ES2023 in tsconfig/base.json
 
 import * as process from "node:process";
 
