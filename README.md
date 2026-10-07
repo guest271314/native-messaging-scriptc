@@ -79,7 +79,7 @@ scriptc coverage /home/user/native-messaging-scriptc/nm_js2wasm_sync_framing.ts
 3. Click `Load unpacked`.
 4. Select `native-messaging-script` folder.
 5. Note the generated extension ID.
-6. Open `nm_scriptc.json` in a text editor, set `"path"` to absolute path of `nm_scriptc_node_fs` (native executable), or `nm_scriptc.sh` (shellscript to execute `wasmtime nm_scriptc_node_fs.wasm`) and `chrome-extension://<ID>/` using ID from 5 in `"allowed_origins"` array; and make sure `wasmtime` is in `PATH` and `nm_scriptc.sh` is executable (when executing `nm_scriptc_node_fs.wasm` with a WASM runtime).
+6. Open `nm_scriptc.json` in a text editor, set `"path"` to absolute path of `nm_scriptc_node_fs` or `nm_scriptc` (native executables), or `nm_scriptc.sh` (shellscript to execute `nm_scriptc_node_fs.wasm` or `nm_scriptc.wasm` with a WASM runtime) and `chrome-extension://<ID>/` using ID from 5 in `"allowed_origins"` array; and make sure `wasmtime` is in `PATH` and `nm_scriptc.sh` is executable (when executing WASM targets with a WASM runtime).
 7. Copy the `nm_scriptc.json` file to Chrome or Chromium configuration folder, e.g., Chromium on Linux `~/.config/chromium/NativeMessagingHosts`; Chrome dev channel on Linux `~/.config/google-chrome-unstable/NativeMessagingHosts`.
 8. To test click `service worker` link in panel of unpacked extension which is DevTools for `background.js` in MV3 `ServiceWorker`, observe echo'ed message from `scriptc` Native Messaging host. To disconnect run `port.disconnect()`.
 
