@@ -17,7 +17,7 @@
 ### Install
 
 ```shell
-bun install --trust scriptc @scriptc/runtime-wasm32-wasi@0.2.5
+bun install --trust scriptc @scriptc/runtime-wasm32-wasi@latest
 ```
 
 ### Compile to native executable
